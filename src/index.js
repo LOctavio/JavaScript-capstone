@@ -1,4 +1,9 @@
 import footerDom from "./footer";
+import printHeader from "./header";
 import './style.css';
 
-document.onload(footerDom());
+
+window.onload = () => {
+  printHeader();
+  footerDom();
+}

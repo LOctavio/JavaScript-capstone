@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/Roboto-Regular.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+  
+
 * {
   box-sizing: border-box;
 }
@@ -11,6 +19,12 @@ body {
 header {
   grid-column: 1/1;
   grid-row: 1/2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  background-color: gray;
 }
 
 .footer-grid {
