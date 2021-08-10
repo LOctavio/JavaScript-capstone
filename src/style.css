@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 2fr 7fr 1fr;
+  height: 800px;
+}
+
+header {
+  grid-column: 1/1;
+  grid-row: 1/2;
+}
+
+.footer-grid {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background-color: aquamarine;
+}
