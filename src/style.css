@@ -4,7 +4,20 @@
   font-weight: 600;
   font-style: normal;
 }
-  
+
+@font-face {
+  font-family: 'STIXTwo';
+  src: url('./assets/STIXTwoText-VariableFont_wght.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LibreFranklin';
+  src: url('./assets/LibreFranklin-VariableFont_wght.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
 
 * {
   box-sizing: border-box;
@@ -36,4 +49,40 @@ header {
   display: flex;
   align-items: center;
   padding-left: 2em;
+}
+
+.listContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style-type: none;
+}
+
+.listContainer li {
+  padding: 20px;
+}
+
+.item-image {
+  width: 300px;
+  height: 210px;
+}
+
+.comments-button {
+  width: 100%;
+}
+
+.item-title {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'STIXTwo', sans-serif;
+}
+
+.like {
+  width: 30px;
+  height: 30px;
+  margin-top: 18.72px;
+}
+
+.amount-likes {
+  text-align: right;
+  font-family: 'LibreFranklin', sans-serif;
 }

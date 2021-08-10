@@ -10,6 +10,6 @@ const printHeader = () => {
   header.appendChild(logo);
   header.appendChild(title);
   mainDom.appendChild(header);
-}
+};
 
 export default printHeader;
