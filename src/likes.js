@@ -5,7 +5,9 @@ const getLikesList = async () => {
     .then((response) => response.json())
     .then((json) => {
       json.forEach((element) => {
-        document.getElementById(element.item_id).childNodes[2].innerHTML = `${element.likes} likes`;
+        if((element.item_id+'').includes('item')) {
+          document.getElementById(element.item_id).childNodes[2].innerHTML = `${element.likes} likes`;
+        }
       });
     });
 };
