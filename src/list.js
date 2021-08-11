@@ -1,4 +1,5 @@
 import Icon from './assets/heart.svg';
+import popUp from './comments.js';
 
 const printList = (list) => {
   const mainDom = document.querySelector('body');
@@ -23,14 +24,11 @@ const printList = (list) => {
     const button = document.createElement('button');
     button.textContent = 'Comments';
     button.setAttribute('class', 'comments-button');
-    
+
     button.addEventListener('click', (e) => {
-      // const detailsPage = document.createElement('div');
-      // if (e.target.className === 'comments-button') {     
-      //   detailsPage.classList.add('details-page');
-      // }
-      console.log('I have been clicked');
-    } )
+      popUp();
+    })
+
     titleContainer.appendChild(title);
     titleContainer.appendChild(like);
     item.appendChild(image);
@@ -38,9 +36,9 @@ const printList = (list) => {
     item.appendChild(likeText);
     item.appendChild(button);
     listContainer.appendChild(item);
-  });
-  container.appendChild(listContainer);
-  mainDom.appendChild(container);
+    });
+    container.appendChild(listContainer);
+    mainDom.appendChild(container);
 };
 
 const getList = async () => {
