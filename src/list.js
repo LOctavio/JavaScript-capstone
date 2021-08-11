@@ -39,7 +39,8 @@ const printList = (list, callback) => {
   });
   container.appendChild(listContainer);
   mainDom.appendChild(container);
-  numberOfItems();
+  const doc = document;   
+  numberOfItems(doc);
   callback();
 };
 
