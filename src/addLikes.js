@@ -8,7 +8,7 @@ const addLikesList = async (id) => {
       'Content-Type': 'application/json',
     },
   })
-    .then((response) => response.json());
+    .then(() => window.location.reload());
 };
 
 export default addLikesList;
