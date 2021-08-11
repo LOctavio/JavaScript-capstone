@@ -5,8 +5,11 @@ const printList = (list) => {
   const container = document.createElement('main');
   const listContainer = document.createElement('ul');
   listContainer.setAttribute('class', 'listContainer');
+  let count = 0;
   list.forEach((element) => {
+    count++;
     const item = document.createElement('li');
+    item.id = 'item'+count;
     const image = new Image();
     image.src = element.url;
     image.setAttribute('class', 'item-image');
