@@ -23,6 +23,14 @@ const printList = (list) => {
     const button = document.createElement('button');
     button.textContent = 'Comments';
     button.setAttribute('class', 'comments-button');
+    
+    button.addEventListener('click', (e) => {
+      // const detailsPage = document.createElement('div');
+      // if (e.target.className === 'comments-button') {     
+      //   detailsPage.classList.add('details-page');
+      // }
+      console.log('I have been clicked');
+    } )
     titleContainer.appendChild(title);
     titleContainer.appendChild(like);
     item.appendChild(image);

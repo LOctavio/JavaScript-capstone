@@ -27,6 +27,15 @@ body {
   display: grid;
   grid-template-rows: 2fr 7fr 1fr;
   height: 800px;
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+  opacity: .5;
 }
 
 header {
@@ -85,4 +94,11 @@ header {
 .amount-likes {
   text-align: right;
   font-family: 'LibreFranklin', sans-serif;
+}
+
+.details-page {
+  position: absolute;
+  width: 50%;
+  background-color: #8DA5C6;
+  z-index: 999;
 }
