@@ -113,8 +113,9 @@ const popUp = (obj, title) => {
       addAComm.innerHTML = 'Add a comment';
       addComment.appendChild(addAComm);
       const commentForm = document.createElement('form');
+      commentForm.classList.add('comm-form');
       const yourName = document.createElement('input');
-      yourName.setAttribute('type', 'text');
+      // yourName.setAttribute('type', 'text');
       yourName.setAttribute('placeholder', 'Your name');
       yourName.classList.add('your-name');
       commentForm.appendChild(yourName);
@@ -122,12 +123,13 @@ const popUp = (obj, title) => {
       const yourComm = document.createElement('input');
       yourComm.setAttribute('type', 'textarea');
       yourComm.setAttribute('placeholder', 'Your insights');
-      yourComm.classList.add('your-name');
+      yourComm.classList.add('your-comm');
       commentForm.appendChild(yourComm);
 
       const commBtn = document.createElement('button');
-      yourComm.setAttribute('type', 'submit');
-      yourComm.classList.add('comm-btn');
+      commBtn.setAttribute('type', 'submit');
+      commBtn.classList.add('comm-btn');
+      commBtn.textContent = 'Submit';
       commentForm.appendChild(commBtn);
       addComment.appendChild(commentForm);
       detailsPage.appendChild(addComment);
