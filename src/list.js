@@ -1,5 +1,5 @@
 import Icon from './assets/heart.svg';
-import popUp from './comments.js';
+import getObj from './comments.js';
 
 const printList = (list) => {
   const mainDom = document.querySelector('body');
@@ -26,7 +26,7 @@ const printList = (list) => {
     button.setAttribute('class', 'comments-button');
 
     button.addEventListener('click', (e) => {
-      popUp();
+      getObj();
     })
 
     titleContainer.appendChild(title);

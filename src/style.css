@@ -108,20 +108,73 @@ header {
 }
 
 .details-modal-on {
-  display: block;
-  width: 50%;
-  background-color: #8DA5C6;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  background-color: #d0d3d6;
   z-index: 1;
   position: fixed;
-  left: 10;
-  top: 10;
-  height: 50%;
+  left: 20;
+  top: 20;
+  height: 70%;
   overflow: auto;
 }
 
 .close-btn {
-  color: white;
-  float: right;
-  font-size: 28px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 25px;
+  width: 25px;
   font-weight: bold;
+  cursor: pointer;
+}
+
+.img-detail {
+  height: 50%;
+  width: 50%;
+  margin-top: 15px;
+  align-self: center;
+  background-color: rgb(247, 253, 251);
+}
+
+
+
+.extras-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+
+.img-title {
+  align-self: center;
+  font-family: 'STIXTwo', sans-serif;
+  font-size: 24px;
+}
+
+.description {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.copyright {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.date {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.resource {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.extras {
+  color: black;
+  font-family: 'STIXTwo', sans-serif;
+  font-size: 18px;
+  text-align: center; 
 }
