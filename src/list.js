@@ -49,7 +49,7 @@ const printList = (list, callback) => {
 };
 
 const getList = async (callback) => {
-  await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-7')
+  await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-8')
     .then((response) => response.json())
     .then((json) => printList(json, callback));
 };
