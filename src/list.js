@@ -1,4 +1,5 @@
 import Icon from './assets/heart.svg';
+import addLikesList from './addLikes.js';
 
 const printList = (list, callback) => {
   const mainDom = document.querySelector('body');
@@ -20,6 +21,7 @@ const printList = (list, callback) => {
     const like = new Image();
     like.src = Icon;
     like.setAttribute('class', 'like');
+    like.addEventListener('click', (e) => addLikesList(e.target.parentNode.parentNode.id));
     const likeText = document.createElement('p');
     likeText.innerHTML = '0 likes';
     likeText.setAttribute('class', 'amount-likes');
