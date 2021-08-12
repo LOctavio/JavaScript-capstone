@@ -1,4 +1,3 @@
-import { add } from 'lodash';
 import closeIcon from './assets/x-circle.svg';
 
 const popUp = (obj, callback) => {
@@ -9,76 +8,74 @@ const popUp = (obj, callback) => {
   const closeBtn = new Image();
   closeBtn.src = closeIcon;
   closeBtn.className = 'close-btn';
-  closeBtn.addEventListener('click', (e) => {
+  closeBtn.addEventListener('click', () => {
     detailsPage.classList.replace('details-modal-on', 'details-modal');
   });
   detailsPage.appendChild(closeBtn);
 
-
   obj.forEach((element) => {
-      const detailImage = document.createElement('img');
-      detailImage.className = 'img-detail';
-      detailImage.src = element.url;
-      detailsPage.appendChild(detailImage);
-      
-      const extrasCont = document.createElement('div');
-      extrasCont.className = 'extras-div';
+    const detailImage = document.createElement('img');
+    detailImage.className = 'img-detail';
+    detailImage.src = element.url;
+    detailsPage.appendChild(detailImage);
 
-      const imgTitle = document.createElement('h1');
-      imgTitle.innerHTML = element.title;
-      imgTitle.className = 'img-title'
-      extrasCont.appendChild(imgTitle);
+    const extrasCont = document.createElement('div');
+    extrasCont.className = 'extras-div';
 
-      const descCont = document.createElement('div');
-      descCont.classList.add('desc-cont', 'extras-flex');
+    const imgTitle = document.createElement('h1');
+    imgTitle.innerHTML = element.title;
+    imgTitle.className = 'img-title';
+    extrasCont.appendChild(imgTitle);
 
-      const description = document.createElement('p');
-      description.classList.add('description', 'extras');
-      description.innerHTML = 'Description:'
-      descCont.appendChild(description);
+    const descCont = document.createElement('div');
+    descCont.classList.add('desc-cont', 'extras-flex');
 
-      const descriptionTxt = document.createElement('p');
-      descriptionTxt.classList.add('description-txt', 'extras');
-      descriptionTxt.innerHTML = element.media_type;
-      descCont.appendChild(descriptionTxt);
-      extrasCont.appendChild(descCont);
+    const description = document.createElement('p');
+    description.classList.add('description', 'extras');
+    description.innerHTML = 'Description:';
+    descCont.appendChild(description);
 
-      const dateCont = document.createElement('div');
-      dateCont.classList.add('date-cont', 'extras-flex');
+    const descriptionTxt = document.createElement('p');
+    descriptionTxt.classList.add('description-txt', 'extras');
+    descriptionTxt.innerHTML = element.media_type;
+    descCont.appendChild(descriptionTxt);
+    extrasCont.appendChild(descCont);
 
-      const date = document.createElement('p');
-      date.classList.add('date', 'extras');
-      date.innerHTML = 'Date:'
-      dateCont.appendChild(date);
-      extrasCont.appendChild(dateCont);
+    const dateCont = document.createElement('div');
+    dateCont.classList.add('date-cont', 'extras-flex');
 
-      const dateTxt = document.createElement('p');
-      dateTxt.classList.add('date', 'extras');
-      dateTxt.innerHTML = element.date;
-      dateCont.appendChild(dateTxt);
+    const date = document.createElement('p');
+    date.classList.add('date', 'extras');
+    date.innerHTML = 'Date:';
+    dateCont.appendChild(date);
+    extrasCont.appendChild(dateCont);
 
-      const copyCont = document.createElement('div');
-      copyCont.classList.add('copy-cont', 'extras-flex');
+    const dateTxt = document.createElement('p');
+    dateTxt.classList.add('date', 'extras');
+    dateTxt.innerHTML = element.date;
+    dateCont.appendChild(dateTxt);
 
-      const copyright = document.createElement('p');
-      copyright.classList.add('copyright', 'extras');
-      copyright.innerHTML = 'Service version:'
-      copyCont.appendChild(copyright);
+    const copyCont = document.createElement('div');
+    copyCont.classList.add('copy-cont', 'extras-flex');
 
-      const copyrightTxt = document.createElement('p');
-      copyrightTxt.classList.add('copyright', 'extras');
-      copyrightTxt.innerHTML = element.service_version;
-      copyCont.appendChild(copyrightTxt);
-      extrasCont.appendChild(copyCont);
+    const copyright = document.createElement('p');
+    copyright.classList.add('copyright', 'extras');
+    copyright.innerHTML = 'Service version:';
+    copyCont.appendChild(copyright);
 
-      const resource = document.createElement('p');
-      resource.classList.add('resource', 'extras');
-      resource.innerHTML = 'Resource:'
-      extrasCont.appendChild(resource);
-      detailsPage.appendChild(extrasCont)
-  })
- 
-  
+    const copyrightTxt = document.createElement('p');
+    copyrightTxt.classList.add('copyright', 'extras');
+    copyrightTxt.innerHTML = element.service_version;
+    copyCont.appendChild(copyrightTxt);
+    extrasCont.appendChild(copyCont);
+
+    const resource = document.createElement('p');
+    resource.classList.add('resource', 'extras');
+    resource.innerHTML = 'Resource:';
+    extrasCont.appendChild(resource);
+    detailsPage.appendChild(extrasCont);
+  });
+
   const commentsBox = document.createElement('div');
   commentsBox.classList.add('comments-box');
 
@@ -103,18 +100,18 @@ const popUp = (obj, callback) => {
 
   const addAComm = document.createElement('h2');
   addAComm.classList.add('add-acomm');
-  addAComm.innerHTML = 'Add a comment'
+  addAComm.innerHTML = 'Add a comment';
   addComment.appendChild(addAComm);
   const commentForm = document.createElement('form');
   const yourName = document.createElement('input');
   yourName.setAttribute('type', 'text');
-  yourName.setAttribute('placeholder', 'Your name')
+  yourName.setAttribute('placeholder', 'Your name');
   yourName.classList.add('your-name');
   commentForm.appendChild(yourName);
 
   const yourComm = document.createElement('input');
   yourComm.setAttribute('type', 'textarea');
-  yourComm.setAttribute('placeholder', 'Your insights')
+  yourComm.setAttribute('placeholder', 'Your insights');
   yourComm.classList.add('your-name');
   commentForm.appendChild(yourComm);
 
@@ -127,7 +124,7 @@ const popUp = (obj, callback) => {
 
   document.body.appendChild(detailsPage);
   callback();
-}
+};
 
 const getObj = async (callback) => {
   await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-21')

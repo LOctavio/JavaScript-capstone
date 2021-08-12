@@ -25,9 +25,9 @@ const printList = (list) => {
     button.textContent = 'Comments';
     button.setAttribute('class', 'comments-button');
 
-    button.addEventListener('click', (e) => {
+    button.addEventListener('click', () => {
       getObj();
-    })
+    });
 
     titleContainer.appendChild(title);
     titleContainer.appendChild(like);
@@ -36,9 +36,9 @@ const printList = (list) => {
     item.appendChild(likeText);
     item.appendChild(button);
     listContainer.appendChild(item);
-    });
-    container.appendChild(listContainer);
-    mainDom.appendChild(container);
+  });
+  container.appendChild(listContainer);
+  mainDom.appendChild(container);
 };
 
 const getList = async () => {
