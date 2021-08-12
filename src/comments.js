@@ -83,6 +83,17 @@ const popUp = (obj, callback) => {
   yourName.setAttribute('placeholder', 'Your name')
   yourName.classList.add('your-name');
   commentForm.appendChild(yourName);
+
+  const yourComm = document.createElement('input');
+  yourComm.setAttribute('type', 'textarea');
+  yourComm.setAttribute('placeholder', 'Your insights')
+  yourComm.classList.add('your-name');
+  commentForm.appendChild(yourComm);
+
+  const commBtn = document.createElement('button');
+  yourComm.setAttribute('type', 'submit');
+  yourComm.classList.add('comm-btn');
+  commentForm.appendChild(commBtn);
   addComment.appendChild(commentForm);
   detailsPage.appendChild(addComment);
 
