@@ -13,6 +13,8 @@ const popUp = (obj, callback) => {
   });
   detailsPage.appendChild(closeBtn);
 
+  
+
   obj.forEach((element) => {
     const detailImage = document.createElement('img');
     detailImage.className = 'img-detail';
@@ -48,12 +50,12 @@ const popUp = (obj, callback) => {
     date.classList.add('date', 'extras');
     date.innerHTML = 'Date:';
     dateCont.appendChild(date);
-    extrasCont.appendChild(dateCont);
-
+   
     const dateTxt = document.createElement('p');
     dateTxt.classList.add('date', 'extras');
     dateTxt.innerHTML = element.date;
     dateCont.appendChild(dateTxt);
+    extrasCont.appendChild(dateCont);
 
     const copyCont = document.createElement('div');
     copyCont.classList.add('copy-cont', 'extras-flex');
@@ -69,10 +71,19 @@ const popUp = (obj, callback) => {
     copyCont.appendChild(copyrightTxt);
     extrasCont.appendChild(copyCont);
 
+    const resourceCont = document.createElement('div');
+    resourceCont.classList.add('resource-cont', 'extras-flex');
+
     const resource = document.createElement('p');
     resource.classList.add('resource', 'extras');
     resource.innerHTML = 'Resource:';
-    extrasCont.appendChild(resource);
+    resourceCont.appendChild(resource);
+
+    const resourceTxt = document.createElement('p');
+    resourceTxt.classList.add('resource', 'extras');
+    resourceTxt.innerHTML = element.date;
+    resourceCont.appendChild(resourceTxt);
+    extrasCont.appendChild(resourceCont);
     detailsPage.appendChild(extrasCont);
   });
 

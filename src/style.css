@@ -147,6 +147,7 @@ header {
 
 .extras-flex {
   display: flex;
+  margin: 0 auto 0 auto;
 }
 
 .desc-cont {
@@ -164,7 +165,7 @@ header {
   grid-row: 3/4;
 }
 
-.resource {
+.resource-cont {
   grid-column: 2/3;
   grid-row: 3/4;
 }
