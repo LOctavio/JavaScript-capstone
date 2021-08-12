@@ -31,8 +31,9 @@ const printList = (list, callback) => {
     button.textContent = 'Comments';
     button.setAttribute('class', 'comments-button');
 
-    button.addEventListener('click', () => {
-      getObj();
+    button.addEventListener('click', (e) => {
+      const title = e.target.parentNode.childNodes[1].childNodes[0].textContent;
+      getObj(title);
     });
 
     titleContainer.appendChild(title);
@@ -51,7 +52,7 @@ const printList = (list, callback) => {
 };
 
 const getList = async (callback) => {
-  await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-21')
+  await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-7')
     .then((response) => response.json())
     .then((json) => printList(json, callback));
 };

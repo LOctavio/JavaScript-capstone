@@ -26,7 +26,7 @@
 body {
   display: grid;
   grid-template-rows: 2fr 7fr 1fr;
-  height: 800px;
+  height: 1000px;
   position: absolute;
   top: 0;
   left: 0;
@@ -147,6 +147,7 @@ header {
 
 .extras-flex {
   display: flex;
+  margin: 0 auto 0 auto;
 }
 
 .desc-cont {
@@ -164,7 +165,7 @@ header {
   grid-row: 3/4;
 }
 
-.resource {
+.resource-cont {
   grid-column: 2/3;
   grid-row: 3/4;
 }
@@ -176,6 +177,7 @@ header {
   text-align: center;
   display: flex;
 }
+
 
 .comments-box {
   margin-left: auto;
@@ -195,4 +197,11 @@ header {
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
+  padding: 1em;
+}
+
+.your-name, .your-comm {
+  display: block;
+  border: 1px solid grey;
+  margin-bottom: 1em;
 }
