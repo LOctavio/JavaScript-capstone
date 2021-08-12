@@ -103,8 +103,6 @@ header {
   flex-direction: column;
   width: 60%;
   background-color: #d0d3d6;
-
-  /* z-index: 1; */
   position: fixed;
   top: 50%;
   left: 50%;

@@ -1,6 +1,7 @@
 import closeIcon from './assets/x-circle.svg';
+import addComments from './addComment.js';
 
-const popUp = (obj, title) => {
+const popUp = (id, obj, title) => {
   const detailsPage = document.createElement('div');
   detailsPage.classList.add('details-modal-on');
   document.body.appendChild(detailsPage);
@@ -87,64 +88,68 @@ const popUp = (obj, title) => {
         extrasCont.appendChild(resourceCont);
         detailsPage.appendChild(extrasCont);
         const commentsBox = document.createElement('div');
-      commentsBox.classList.add('comments-box');
+        commentsBox.classList.add('comments-box');
 
-      const commentsCount = document.createElement('h3');
-      commentsCount.classList.add('comments-count');
-      commentsCount.innerHTML = 'Comments(3)';
-      commentsBox.appendChild(commentsCount);
+        const commentsCount = document.createElement('h3');
+        commentsCount.classList.add('comments-count');
+        commentsCount.innerHTML = 'Comments(3)';
+        commentsBox.appendChild(commentsCount);
 
-      const commentsList = document.createElement('ul');
-      commentsList.classList.add('comments-list');
-      const commentOne = document.createElement('li');
-      commentOne.innerHTML = '2021/08/12  User1:  Hello';
-      commentsList.appendChild(commentOne);
-      const commentTwo = document.createElement('li');
-      commentTwo.innerHTML = '2021/08/12  User2:  Hello back';
-      commentsList.appendChild(commentTwo);
-      commentsBox.appendChild(commentsList);
-      detailsPage.appendChild(commentsBox);
+        const commentsList = document.createElement('ul');
+        commentsList.classList.add('comments-list');
+        const commentOne = document.createElement('li');
+        commentOne.innerHTML = '2021/08/12  User1:  Hello';
+        commentsList.appendChild(commentOne);
+        const commentTwo = document.createElement('li');
+        commentTwo.innerHTML = '2021/08/12  User2:  Hello back';
+        commentsList.appendChild(commentTwo);
+        commentsBox.appendChild(commentsList);
+        detailsPage.appendChild(commentsBox);
 
-      const addComment = document.createElement('div');
-      addComment.classList.add('add-comment');
+        const addComment = document.createElement('div');
+        addComment.classList.add('add-comment');
 
-      const addAComm = document.createElement('h2');
-      addAComm.classList.add('add-acomm');
-      addAComm.innerHTML = 'Add a comment';
-      addComment.appendChild(addAComm);
-      const commentForm = document.createElement('form');
-      commentForm.classList.add('comm-form');
-      const yourName = document.createElement('input');
-      // yourName.setAttribute('type', 'text');
-      yourName.setAttribute('placeholder', 'Your name');
-      yourName.classList.add('your-name');
-      commentForm.appendChild(yourName);
+        const addAComm = document.createElement('h2');
+        addAComm.classList.add('add-acomm');
+        addAComm.innerHTML = 'Add a comment';
+        addComment.appendChild(addAComm);
+        const commentForm = document.createElement('form');
+        commentForm.classList.add('comm-form');
+        const yourName = document.createElement('input');
+        yourName.setAttribute('placeholder', 'Your name');
+        yourName.classList.add('your-name');
+        commentForm.appendChild(yourName);
 
-      const yourComm = document.createElement('input');
-      yourComm.setAttribute('type', 'textarea');
-      yourComm.setAttribute('placeholder', 'Your insights');
-      yourComm.classList.add('your-comm');
-      commentForm.appendChild(yourComm);
+        const yourComm = document.createElement('input');
+        yourComm.setAttribute('type', 'textarea');
+        yourComm.setAttribute('placeholder', 'Your insights');
+        yourComm.classList.add('your-comm');
+        commentForm.appendChild(yourComm);
 
-      const commBtn = document.createElement('button');
-      commBtn.setAttribute('type', 'submit');
-      commBtn.classList.add('comm-btn');
-      commBtn.textContent = 'Submit';
-      commentForm.appendChild(commBtn);
-      addComment.appendChild(commentForm);
-      detailsPage.appendChild(addComment);
+        const commBtn = document.createElement('button');
+        commBtn.setAttribute('type', 'submit');
+        commBtn.classList.add('comm-btn');
+        commBtn.textContent = 'Submit';
+        commBtn.addEventListener('click', () => {
+          const username = yourName.value;
+          const comment = yourComm.value;
+          addComments(id, username, comment);
+        })
+        commentForm.appendChild(commBtn);
+        addComment.appendChild(commentForm);
+        detailsPage.appendChild(addComment);
 
-      document.body.appendChild(detailsPage);      
-      }
-        
+        document.body.appendChild(detailsPage);      
+        }
+          
 
       
     });
 }
-    const getObj = async (title) => {
+    const getObj = async (id, title) => {
       await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-21')
         .then((response) => response.json())
-        .then((json) => popUp(json, title));
+        .then((json) => popUp(id, json, title));
     };
 
 export default getObj;

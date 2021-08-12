@@ -2,6 +2,7 @@ import Icon from './assets/heart.svg';
 import getObj from './comments.js';
 import addLikesList from './addLikes.js';
 import numberOfItems from './ItemsCounter.js';
+import getComments from './getComments.js';
 
 const printList = (list, callback) => {
   const mainDom = document.querySelector('body');
@@ -33,7 +34,10 @@ const printList = (list, callback) => {
 
     button.addEventListener('click', (e) => {
       const title = e.target.parentNode.childNodes[1].childNodes[0].textContent;
-      getObj(title);
+      const id = e.target.parentNode.id
+      getObj(id, title);
+      getComments(id);
+
     });
 
     titleContainer.appendChild(title);
