@@ -178,7 +178,6 @@ header {
   display: flex;
 }
 
-
 .comments-box {
   margin-left: auto;
   margin-right: auto;
@@ -200,7 +199,8 @@ header {
   padding: 1em;
 }
 
-.your-name, .your-comm {
+.your-name,
+.your-comm {
   display: block;
   border: 1px solid grey;
   margin-bottom: 1em;

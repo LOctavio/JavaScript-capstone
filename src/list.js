@@ -2,7 +2,7 @@ import Icon from './assets/heart.svg';
 import getObj from './comments.js';
 import addLikesList from './addLikes.js';
 import numberOfItems from './ItemsCounter.js';
-import getComments from './getComments';
+import getComments from './getComments.js';
 
 const printList = (list, callback) => {
   const mainDom = document.querySelector('body');
@@ -34,7 +34,7 @@ const printList = (list, callback) => {
 
     button.addEventListener('click', (e) => {
       const title = e.target.parentNode.childNodes[1].childNodes[0].textContent;
-      const id = e.target.parentNode.id;
+      const { id } = e.target.parentNode;
       getObj(title, id, getComments);
     });
 
@@ -48,7 +48,7 @@ const printList = (list, callback) => {
   });
   container.appendChild(listContainer);
   mainDom.appendChild(container);
-  const doc = document;   
+  const doc = document;
   numberOfItems(doc);
   callback();
 };
