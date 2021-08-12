@@ -1,5 +1,6 @@
 import Icon from './assets/heart.svg';
 import addLikesList from './addLikes.js';
+import numberOfItems from './ItemsCounter.js';
 
 const printList = (list, callback) => {
   const mainDom = document.querySelector('body');
@@ -38,6 +39,8 @@ const printList = (list, callback) => {
   });
   container.appendChild(listContainer);
   mainDom.appendChild(container);
+  const doc = document;   
+  numberOfItems(doc);
   callback();
 };
 
