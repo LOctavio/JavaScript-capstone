@@ -1,4 +1,5 @@
 import Icon from './assets/heart.svg';
+import getObj from './comments.js';
 import addLikesList from './addLikes.js';
 import numberOfItems from './ItemsCounter.js';
 
@@ -29,6 +30,11 @@ const printList = (list, callback) => {
     const button = document.createElement('button');
     button.textContent = 'Comments';
     button.setAttribute('class', 'comments-button');
+
+    button.addEventListener('click', () => {
+      getObj();
+    });
+
     titleContainer.appendChild(title);
     titleContainer.appendChild(like);
     item.appendChild(image);
