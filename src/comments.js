@@ -1,6 +1,6 @@
 import closeIcon from './assets/x-circle.svg';
 
-const popUp = (obj, title) => {
+const popUp = (obj, title, id) => {
   const detailsPage = document.createElement('div');
   detailsPage.classList.add('details-modal-on');
   document.body.appendChild(detailsPage);
@@ -21,6 +21,7 @@ const popUp = (obj, title) => {
         detailImage.className = 'img-detail';
         detailImage.src = element.url;
         detailsPage.appendChild(detailImage);
+        detailImage.id = id+'_image';
 
         const extrasCont = document.createElement('div');
         extrasCont.className = 'extras-div';
@@ -96,12 +97,6 @@ const popUp = (obj, title) => {
 
       const commentsList = document.createElement('ul');
       commentsList.classList.add('comments-list');
-      const commentOne = document.createElement('li');
-      commentOne.innerHTML = '2021/08/12  User1:  Hello';
-      commentsList.appendChild(commentOne);
-      const commentTwo = document.createElement('li');
-      commentTwo.innerHTML = '2021/08/12  User2:  Hello back';
-      commentsList.appendChild(commentTwo);
       commentsBox.appendChild(commentsList);
       detailsPage.appendChild(commentsBox);
 
@@ -141,10 +136,14 @@ const popUp = (obj, title) => {
       
     });
 }
-    const getObj = async (title) => {
+    const getObj = async (title, id, callback) => {
       await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-21')
         .then((response) => response.json())
-        .then((json) => popUp(json, title));
+        .then((json) => { 
+          popUp(json, title, id);
+          const container = document.getElementById(id+'_image').nextSibling.nextSibling.childNodes[1];
+          callback(id, container);
+        });
     };
 
 export default getObj;
