@@ -147,17 +147,21 @@ header {
   text-align: center;
 }
 
-.description {
+.extras-flex {
+  display: flex;
+}
+
+.desc-cont {
   grid-column: 1/2;
   grid-row: 2/3;
 }
 
-.copyright {
+.copy-cont {
   grid-column: 2/3;
   grid-row: 2/3;
 }
 
-.date {
+.date-cont {
   grid-column: 1/2;
   grid-row: 3/4;
 }
@@ -171,7 +175,8 @@ header {
   color: black;
   font-family: 'STIXTwo', sans-serif;
   font-size: 18px;
-  text-align: center; 
+  text-align: center;
+  display: flex;
 }
 
 .comments-box {
