@@ -1,3 +1,4 @@
+import addComments from './addComments';
 import closeIcon from './assets/x-circle.svg';
 
 const popUp = (obj, title, id) => {
@@ -107,26 +108,28 @@ const popUp = (obj, title, id) => {
       addAComm.classList.add('add-acomm');
       addAComm.innerHTML = 'Add a comment';
       addComment.appendChild(addAComm);
-      const commentForm = document.createElement('form');
-      commentForm.classList.add('comm-form');
       const yourName = document.createElement('input');
       // yourName.setAttribute('type', 'text');
       yourName.setAttribute('placeholder', 'Your name');
       yourName.classList.add('your-name');
-      commentForm.appendChild(yourName);
+      addComment.appendChild(yourName);
 
       const yourComm = document.createElement('input');
       yourComm.setAttribute('type', 'textarea');
       yourComm.setAttribute('placeholder', 'Your insights');
       yourComm.classList.add('your-comm');
-      commentForm.appendChild(yourComm);
+      addComment.appendChild(yourComm);
 
       const commBtn = document.createElement('button');
-      commBtn.setAttribute('type', 'submit');
       commBtn.classList.add('comm-btn');
       commBtn.textContent = 'Submit';
-      commentForm.appendChild(commBtn);
-      addComment.appendChild(commentForm);
+      commBtn.addEventListener('click', () => {
+        const name = yourName.value;
+        const comment = yourComm.value;
+        addComments(id, commentsList, name, comment);
+      });
+      
+      addComment.appendChild(commBtn);
       detailsPage.appendChild(addComment);
 
       document.body.appendChild(detailsPage);      
