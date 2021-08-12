@@ -1,6 +1,6 @@
 import closeIcon from './assets/x-circle.svg';
 
-const popUp = (obj, callback) => {
+const popUp = (obj, title) => {
   const detailsPage = document.createElement('div');
   detailsPage.classList.add('details-modal-on');
   document.body.appendChild(detailsPage);
@@ -16,131 +16,133 @@ const popUp = (obj, callback) => {
   
 
   obj.forEach((element) => {
-    const detailImage = document.createElement('img');
-    detailImage.className = 'img-detail';
-    detailImage.src = element.url;
-    detailsPage.appendChild(detailImage);
+    if (element.title == title) {
+        const detailImage = document.createElement('img');
+        detailImage.className = 'img-detail';
+        detailImage.src = element.url;
+        detailsPage.appendChild(detailImage);
 
-    const extrasCont = document.createElement('div');
-    extrasCont.className = 'extras-div';
+        const extrasCont = document.createElement('div');
+        extrasCont.className = 'extras-div';
 
-    const imgTitle = document.createElement('h1');
-    imgTitle.innerHTML = element.title;
-    imgTitle.className = 'img-title';
-    extrasCont.appendChild(imgTitle);
+        const imgTitle = document.createElement('h1');
+        imgTitle.innerHTML = element.title;
+        imgTitle.className = 'img-title';
+        extrasCont.appendChild(imgTitle);
 
-    const descCont = document.createElement('div');
-    descCont.classList.add('desc-cont', 'extras-flex');
+        const descCont = document.createElement('div');
+        descCont.classList.add('desc-cont', 'extras-flex');
 
-    const description = document.createElement('p');
-    description.classList.add('description', 'extras');
-    description.innerHTML = 'Description:';
-    descCont.appendChild(description);
+        const description = document.createElement('p');
+        description.classList.add('description', 'extras');
+        description.innerHTML = 'Description:';
+        descCont.appendChild(description);
 
-    const descriptionTxt = document.createElement('p');
-    descriptionTxt.classList.add('description-txt', 'extras');
-    descriptionTxt.innerHTML = element.media_type;
-    descCont.appendChild(descriptionTxt);
-    extrasCont.appendChild(descCont);
+        const descriptionTxt = document.createElement('p');
+        descriptionTxt.classList.add('description-txt', 'extras');
+        descriptionTxt.innerHTML = element.media_type;
+        descCont.appendChild(descriptionTxt);
+        extrasCont.appendChild(descCont);
 
-    const dateCont = document.createElement('div');
-    dateCont.classList.add('date-cont', 'extras-flex');
+        const dateCont = document.createElement('div');
+        dateCont.classList.add('date-cont', 'extras-flex');
 
-    const date = document.createElement('p');
-    date.classList.add('date', 'extras');
-    date.innerHTML = 'Date:';
-    dateCont.appendChild(date);
-   
-    const dateTxt = document.createElement('p');
-    dateTxt.classList.add('date', 'extras');
-    dateTxt.innerHTML = element.date;
-    dateCont.appendChild(dateTxt);
-    extrasCont.appendChild(dateCont);
+        const date = document.createElement('p');
+        date.classList.add('date', 'extras');
+        date.innerHTML = 'Date:';
+        dateCont.appendChild(date);
+      
+        const dateTxt = document.createElement('p');
+        dateTxt.classList.add('date', 'extras');
+        dateTxt.innerHTML = element.date;
+        dateCont.appendChild(dateTxt);
+        extrasCont.appendChild(dateCont);
 
-    const copyCont = document.createElement('div');
-    copyCont.classList.add('copy-cont', 'extras-flex');
+        const copyCont = document.createElement('div');
+        copyCont.classList.add('copy-cont', 'extras-flex');
 
-    const copyright = document.createElement('p');
-    copyright.classList.add('copyright', 'extras');
-    copyright.innerHTML = 'Service version:';
-    copyCont.appendChild(copyright);
+        const copyright = document.createElement('p');
+        copyright.classList.add('copyright', 'extras');
+        copyright.innerHTML = 'Service version:';
+        copyCont.appendChild(copyright);
 
-    const copyrightTxt = document.createElement('p');
-    copyrightTxt.classList.add('copyright', 'extras');
-    copyrightTxt.innerHTML = element.service_version;
-    copyCont.appendChild(copyrightTxt);
-    extrasCont.appendChild(copyCont);
+        const copyrightTxt = document.createElement('p');
+        copyrightTxt.classList.add('copyright', 'extras');
+        copyrightTxt.innerHTML = element.service_version;
+        copyCont.appendChild(copyrightTxt);
+        extrasCont.appendChild(copyCont);
 
-    const resourceCont = document.createElement('div');
-    resourceCont.classList.add('resource-cont', 'extras-flex');
+        const resourceCont = document.createElement('div');
+        resourceCont.classList.add('resource-cont', 'extras-flex');
 
-    const resource = document.createElement('p');
-    resource.classList.add('resource', 'extras');
-    resource.innerHTML = 'Resource:';
-    resourceCont.appendChild(resource);
+        const resource = document.createElement('p');
+        resource.classList.add('resource', 'extras');
+        resource.innerHTML = 'Resource:';
+        resourceCont.appendChild(resource);
 
-    const resourceTxt = document.createElement('p');
-    resourceTxt.classList.add('resource', 'extras');
-    resourceTxt.innerHTML = element.date;
-    resourceCont.appendChild(resourceTxt);
-    extrasCont.appendChild(resourceCont);
-    detailsPage.appendChild(extrasCont);
-  });
+        const resourceTxt = document.createElement('p');
+        resourceTxt.classList.add('resource', 'extras');
+        resourceTxt.innerHTML = element.date;
+        resourceCont.appendChild(resourceTxt);
+        extrasCont.appendChild(resourceCont);
+        detailsPage.appendChild(extrasCont);
+        const commentsBox = document.createElement('div');
+      commentsBox.classList.add('comments-box');
 
-  const commentsBox = document.createElement('div');
-  commentsBox.classList.add('comments-box');
+      const commentsCount = document.createElement('h3');
+      commentsCount.classList.add('comments-count');
+      commentsCount.innerHTML = 'Comments(3)';
+      commentsBox.appendChild(commentsCount);
 
-  const commentsCount = document.createElement('h3');
-  commentsCount.classList.add('comments-count');
-  commentsCount.innerHTML = 'Comments(3)';
-  commentsBox.appendChild(commentsCount);
+      const commentsList = document.createElement('ul');
+      commentsList.classList.add('comments-list');
+      const commentOne = document.createElement('li');
+      commentOne.innerHTML = '2021/08/12  User1:  Hello';
+      commentsList.appendChild(commentOne);
+      const commentTwo = document.createElement('li');
+      commentTwo.innerHTML = '2021/08/12  User2:  Hello back';
+      commentsList.appendChild(commentTwo);
+      commentsBox.appendChild(commentsList);
+      detailsPage.appendChild(commentsBox);
 
-  const commentsList = document.createElement('ul');
-  commentsList.classList.add('comments-list');
-  const commentOne = document.createElement('li');
-  commentOne.innerHTML = '2021/08/12  User1:  Hello';
-  commentsList.appendChild(commentOne);
-  const commentTwo = document.createElement('li');
-  commentTwo.innerHTML = '2021/08/12  User2:  Hello back';
-  commentsList.appendChild(commentTwo);
-  commentsBox.appendChild(commentsList);
-  detailsPage.appendChild(commentsBox);
+      const addComment = document.createElement('div');
+      addComment.classList.add('add-comment');
 
-  const addComment = document.createElement('div');
-  addComment.classList.add('add-comment');
+      const addAComm = document.createElement('h2');
+      addAComm.classList.add('add-acomm');
+      addAComm.innerHTML = 'Add a comment';
+      addComment.appendChild(addAComm);
+      const commentForm = document.createElement('form');
+      const yourName = document.createElement('input');
+      yourName.setAttribute('type', 'text');
+      yourName.setAttribute('placeholder', 'Your name');
+      yourName.classList.add('your-name');
+      commentForm.appendChild(yourName);
 
-  const addAComm = document.createElement('h2');
-  addAComm.classList.add('add-acomm');
-  addAComm.innerHTML = 'Add a comment';
-  addComment.appendChild(addAComm);
-  const commentForm = document.createElement('form');
-  const yourName = document.createElement('input');
-  yourName.setAttribute('type', 'text');
-  yourName.setAttribute('placeholder', 'Your name');
-  yourName.classList.add('your-name');
-  commentForm.appendChild(yourName);
+      const yourComm = document.createElement('input');
+      yourComm.setAttribute('type', 'textarea');
+      yourComm.setAttribute('placeholder', 'Your insights');
+      yourComm.classList.add('your-name');
+      commentForm.appendChild(yourComm);
 
-  const yourComm = document.createElement('input');
-  yourComm.setAttribute('type', 'textarea');
-  yourComm.setAttribute('placeholder', 'Your insights');
-  yourComm.classList.add('your-name');
-  commentForm.appendChild(yourComm);
+      const commBtn = document.createElement('button');
+      yourComm.setAttribute('type', 'submit');
+      yourComm.classList.add('comm-btn');
+      commentForm.appendChild(commBtn);
+      addComment.appendChild(commentForm);
+      detailsPage.appendChild(addComment);
 
-  const commBtn = document.createElement('button');
-  yourComm.setAttribute('type', 'submit');
-  yourComm.classList.add('comm-btn');
-  commentForm.appendChild(commBtn);
-  addComment.appendChild(commentForm);
-  detailsPage.appendChild(addComment);
+      document.body.appendChild(detailsPage);      
+      }
+        
 
-  document.body.appendChild(detailsPage);
-  callback();
-};
-
-const getObj = async (callback) => {
-  await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-21')
-    .then((response) => response.json())
-    .then((json) => popUp(json, callback));
-};
+      
+    });
+}
+    const getObj = async (title) => {
+      await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-21')
+        .then((response) => response.json())
+        .then((json) => popUp(json, title));
+    };
 
 export default getObj;

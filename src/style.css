@@ -26,7 +26,7 @@
 body {
   display: grid;
   grid-template-rows: 2fr 7fr 1fr;
-  height: 800px;
+  height: 1000px;
   position: absolute;
   top: 0;
   left: 0;

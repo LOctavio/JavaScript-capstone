@@ -30,8 +30,9 @@ const printList = (list, callback) => {
     button.textContent = 'Comments';
     button.setAttribute('class', 'comments-button');
 
-    button.addEventListener('click', () => {
-      getObj();
+    button.addEventListener('click', (e) => {
+      const title = e.target.parentNode.childNodes[1].childNodes[0].textContent;
+      getObj(title);
     });
 
     titleContainer.appendChild(title);
