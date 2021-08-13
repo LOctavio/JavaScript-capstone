@@ -2,7 +2,7 @@
 
 JavaScript capstone project - An API-based webapp
 
-![screenshot](./app_screenshot.png)
+![screenshot](./src/assets/screenshot1.png)
 
 The webapp loads images from the NASA - Astronompy Picture of the Day API.
 Users can add comments or like the image.
