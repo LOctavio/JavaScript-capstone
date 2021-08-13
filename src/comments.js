@@ -137,9 +137,6 @@ const popUp = (obj, title, id) => {
     }
 
   });
-  // const doc = document;
-  // commentCount(doc, id);
-  detailsPage.addEventListener('click', commentCount(document, id));
   document.body.appendChild(detailsPage);
 };
 

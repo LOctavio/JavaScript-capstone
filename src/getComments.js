@@ -1,3 +1,4 @@
+import commentCount from "./commentCount";
 const appURL = '7XuoMsU1STtgmjOxNrxL';
 
 const getComments = async (id, container) => {
@@ -10,6 +11,8 @@ const getComments = async (id, container) => {
         comment.innerHTML = `${item.creation_date} ${item.username}: ${item.comment}`;
         container.appendChild(comment);
       })
+      const doc = document;
+      commentCount(doc, id);
     }
     ); 
 };
