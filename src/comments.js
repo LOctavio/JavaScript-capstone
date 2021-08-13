@@ -1,6 +1,5 @@
 import addComments from './addComments.js';
 import closeIcon from './assets/x-circle.svg';
-import commentCount from './commentCount.js';
 
 const popUp = (obj, title, id) => {
   const detailsPage = document.createElement('div');
@@ -133,9 +132,7 @@ const popUp = (obj, title, id) => {
       addComment.appendChild(commBtn);
       detailsPage.appendChild(addComment);
       document.body.appendChild(detailsPage);
-
     }
-
   });
   document.body.appendChild(detailsPage);
 };
