@@ -1,16 +1,17 @@
 # Project Name
 
-> One paragraph statement about the project.
+JavaScript capstone project - An API-based webapp
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+The webapp loads images from the NASA - Astronompy Picture of the Day API.
+Users can add comments or like the image.
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- JavaScript, HTML, CSS
+- Webpack
+- Asynchronous javascript, promises, DOM manipulation
 
 ## Live Demo
 
@@ -19,55 +20,49 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- Node
+- Web browser
 
 ### Setup
+- Open terminal porgram
+- Clone this repositiory by running `git clone https://github.com/LOctavio/JavaScript-capstone.git `
+
 
 ### Install
+- Run `npm install`
 
 ### Usage
+- Run `npm start`
 
 ### Run tests
-
-### Deployment
-
+- Run `npm run tests`
 
 
 ## Authors
 
-👤 **Author1**
+ **Luis Octavio Ramirez Cruz** 
+ - GitHub: [LOctavio](https://github.com/LOctavio) 
+ - Twitter: [@Octavio_ram431](https://twitter.com/Octavio_ram431)
+  - LinkedIn: [Luis Octavio Ramirez Cruz](https://www.linkedin.com/in/luis-octavio-ramirez-cruz/) 
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
-
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+**Kevin Kamau**
+- Github: [@kimothokamau](https://github.com/kimothokamau)
+- Twitter: [@kimothokk](https://twitter.com/kimothokk)
+- Linkedin: [Kevin Kamau](https://www.linkedin.com/in/kevinkamauk/)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/LOctavio/JavaScript-capstone/issues)
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
