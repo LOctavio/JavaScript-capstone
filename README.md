@@ -17,6 +17,11 @@ Users can add comments or like the image.
 
 [Live Demo Link](https://livedemo.com)
 
+## Project presentation
+
+[Luis Octavio presentation](https://www.loom.com/share/fb441d82400e4de389376536f2a15e03 )
+
+[Kevin Kamau presentation](https://www.loom.com/share/2a088d1497574285930f3be3e6c81a58)
 
 ## Getting Started
 
@@ -33,6 +38,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 - Run `npm install`
+
 
 ### Usage
 - Run `npm start`
