@@ -16,7 +16,13 @@ const addComments = async (id, container, name, comm) => {
       'Content-Type': 'application/json',
     },
   })
-    .then(() => getComments(id, container));
+    .then(() => { 
+      getComments(id, container);
+      const name = container.parentNode.nextSibling.childNodes[1];
+      name.value = '';
+      const comment = container.parentNode.nextSibling.childNodes[2];
+      comment.value = '';
+    });
 };
 
 export default addComments;
