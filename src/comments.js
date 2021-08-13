@@ -91,10 +91,12 @@ const popUp = (obj, title, id) => {
 
       const commentsCount = document.createElement('h3');
       commentsCount.classList.add('comments-count');
-      commentsCount.innerHTML = 'Comments(3)';
+      commentsCount.id = `${id}_count`;
+      commentsCount.innerHTML = 'Comments';
       commentsBox.appendChild(commentsCount);
 
-      const commentsList = document.createElement('ul');
+      const commentsList = document.createElement('div');
+      commentsList.id = `${id}_comments`;
       commentsList.classList.add('comments-list');
       commentsBox.appendChild(commentsList);
       detailsPage.appendChild(commentsBox);
@@ -129,11 +131,12 @@ const popUp = (obj, title, id) => {
 
       addComment.appendChild(commBtn);
       detailsPage.appendChild(addComment);
-
       document.body.appendChild(detailsPage);
     }
   });
+  document.body.appendChild(detailsPage);
 };
+
 const getObj = async (title, id, callback) => {
   await fetch('https://api.nasa.gov/planetary/apod?api_key=tStRhhjFA0HQcsJqbr9OwtfYzYXhQORNoO6K52bg&start_date=2021-05-01&end_date=2021-05-21')
     .then((response) => response.json())

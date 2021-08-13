@@ -1,8 +1,9 @@
-import numberOfItems from "../ItemsCounter";
+import numberOfItems from '../ItemsCounter.js';
+
 const jsdom = require('jsdom');
 
 const { JSDOM } = jsdom;
-var dom = new JSDOM(`
+let dom = new JSDOM(`
 <!DOCTYPE html>
 <h1>Items</h1>
 <ul class="listContainer">
@@ -18,8 +19,6 @@ test('There are 5 items in the DOM', () => {
   numberOfItems(dom.window.document);
   expect(title.textContent).toBe('Items(5)');
 });
-
-
 
 test('There are 2 items in the DOM', () => {
   dom = new JSDOM(`
